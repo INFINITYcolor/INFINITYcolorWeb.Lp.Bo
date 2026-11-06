@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INFINITYcolor — Letreros y publicidad</title>
+  <meta name="description" content="INFINITYcolor. Letreros, publicidad exterior y marketing en la calle para que tu negocio se vea. Cotiza por WhatsApp." />
+  <meta name="theme-color" content="#0a1f44" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Barra de anuncios -->
+  <div class="announce" aria-label="Anuncios">
+    <div class="announce__track">
+      <span>Cotiza en minutos por WhatsApp</span>
+      <span>∞</span>
+      <span>Letreros y publicidad exterior</span>
+      <span>∞</span>
+      <span>Marketing real en la calle</span>
+      <span>∞</span>
+      <span>Cotiza en minutos por WhatsApp</span>
+      <span>∞</span>
+      <span>Letreros y publicidad exterior</span>
+      <span>∞</span>
+      <span>Marketing real en la calle</span>
+      <span>∞</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#colecciones">Qué hacemos</a>
+      <a href="#cotizar" class="nav__quote">Cotizar</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#top" class="logo" aria-label="INFINITYcolor, inicio">INFINITY<em>color</em></a>
+    <div class="header__right">
+      <a href="#cotizar" class="header__cta">Cotizar</a>
+      <button class="cart-btn" id="cartBtn" aria-label="Ver mi cotización">
+        Mi cotización <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__inf">∞</span>
+      </div>
+      <div class="hero__content">
+        <p class="eyebrow">Letreros · Publicidad · Marketing real</p>
+        <h1>TU MARCA<br />EN LA CALLE</h1>
+        <div class="hero__actions">
+          <a href="#servicios" class="btn btn--light">Ver servicios</a>
+          <a href="#cotizar" class="btn btn--ghost">Cotizar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colecciones -->
+    <section class="section" id="colecciones">
+      <div class="section__head">
+        <h2>Qué hacemos</h2>
+        <a href="#servicios" class="link-arrow">Ver todo →</a>
+      </div>
+      <div class="tiles">
+        <a href="#servicios" class="tile tile--a" data-filter="Letreros">
+          <span class="tile__bigtext">01</span>
+          <span class="tile__label">Letreros<small>Ver servicios</small></span>
+        </a>
+        <a href="#servicios" class="tile tile--b" data-filter="Publicidad exterior">
+          <span class="tile__bigtext">02</span>
+          <span class="tile__label">Publicidad exterior<small>Ver servicios</small></span>
+        </a>
+        <a href="#servicios" class="tile tile--c" data-filter="Marketing en la calle">
+          <span class="tile__bigtext">03</span>
+          <span class="tile__label">Marketing en la calle<small>Ver servicios</small></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="section section--tight" id="servicios">
+      <div class="section__head">
+        <h2>Servicios</h2>
+        <div class="filters" id="filters" role="tablist" aria-label="Filtrar servicios"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- Banner intermedio -->
+    <section class="banner">
+      <p>QUE TU NEGOCIO NO PASE DESAPERCIBIDO</p>
+      <a href="#cotizar" class="btn btn--light">Cotiza tu letrero</a>
+    </section>
+
+    <!-- Cotizador -->
+    <section class="section quote" id="cotizar">
+      <div class="quote__intro">
+        <p class="eyebrow eyebrow--dark">Cotizaciones</p>
+        <h2 class="quote__title">Pide tu<br />cotización</h2>
+        <p class="quote__text">
+          Cuéntanos qué necesitas y te respondemos por WhatsApp con precio y tiempos.
+          Puedes agregar servicios con el botón <strong>“Cotizar”</strong> y se incluirán automáticamente en tu mensaje.
+        </p>
+        <div class="quote__list" id="quoteList" aria-live="polite"></div>
+      </div>
+
+      <form class="form" id="quoteForm" novalidate>
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required />
+        </div>
+        <div class="field">
+          <label for="phone">Tu teléfono (opcional)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Ej. 7XXXXXXX" />
+        </div>
+        <div class="field">
+          <label for="type">¿Qué necesitas?</label>
+          <select id="type" name="type" required>
+            <option value="">Selecciona una opción</option>
+            <option>Letrero (luminoso, 3D, acrílico, lona)</option>
+            <option>Publicidad exterior (vallas, vehículos, vinil)</option>
+            <option>Marketing en la calle (banderas, stands, volantes)</option>
+            <option>Contenido digital y redes sociales</option>
+            <option>Identidad y diseño de marca</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field field--row">
+          <div>
+            <label for="size">Medidas aproximadas</label>
+            <input id="size" name="size" type="text" placeholder="Ej. 3 m x 1 m" />
+          </div>
+          <div>
+            <label for="qty">Cantidad</label>
+            <input id="qty" name="qty" type="number" min="1" inputmode="numeric" placeholder="Ej. 2" />
+          </div>
+        </div>
+        <div class="field field--row">
+          <div>
+            <label for="city">Ciudad / zona</label>
+            <input id="city" name="city" type="text" placeholder="Dónde se instalará" />
+          </div>
+          <div>
+            <label for="date">Fecha requerida</label>
+            <input id="date" name="date" type="date" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="details">Detalles</label>
+          <textarea id="details" name="details" rows="4" placeholder="Texto del letrero, colores, logo, ubicación, si ya tienes un diseño…"></textarea>
+        </div>
+        <p class="form__error" id="formError" role="alert" hidden></p>
+        <button type="submit" class="btn btn--navy btn--full">
+          Enviar cotización por WhatsApp
+        </button>
+        <p class="form__note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+      </form>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="section about" id="nosotros">
+      <div class="about__big">∞</div>
+      <div class="about__text">
+        <p class="eyebrow eyebrow--dark">Sobre nosotros</p>
+        <h2>Somos INFINITYcolor</h2>
+        <p>
+          Hacemos letreros y publicidad que se ven y se recuerdan: desde la fachada de tu local
+          hasta acciones de marketing en la calle, donde está tu gente. También te ayudamos en lo
+          digital, con contenido orgánico y real para que tu marca se vea igual de bien en redes.
+        </p>
+        <ul class="values">
+          <li><strong>Visibilidad</strong><span>Que tu negocio se note desde lejos.</span></li>
+          <li><strong>Diseño</strong><span>Tu idea, bien ejecutada.</span></li>
+          <li><strong>Cercanía</strong><span>Marketing real, con gente real.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section contact" id="contacto">
+      <h2>Contacto</h2>
+      <div class="contact__grid">
+        <a class="contact__card" id="waCard" href="#" target="_blank" rel="noopener">
+          <small>WhatsApp</small>
+          <strong>+591 75864344</strong>
+          <span>Escríbenos →</span>
+        </a>
+        <div class="contact__card">
+          <small>Cotizaciones</small>
+          <strong>Por WhatsApp</strong>
+          <span>Cuéntanos tu idea y medidas</span>
+        </div>
+        <div class="contact__card">
+          <small>Proyectos</small>
+          <strong>A tu medida</strong>
+          <span>Cada letrero se diseña para tu marca</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <div class="logo logo--footer">INFINITY<em>color</em></div>
+        <p class="footer__tag">Letreros y publicidad sin límites.</p>
+      </div>
+      <div>
+        <h3>Navegar</h3>
+        <a href="#servicios">Servicios</a>
+        <a href="#colecciones">Qué hacemos</a>
+        <a href="#cotizar">Cotizar</a>
+      </div>
+      <div>
+        <h3>Empresa</h3>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div>
+        <h3>Escríbenos</h3>
+        <a id="waFooter" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> INFINITYcolor. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <!-- Panel Mi cotización -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Mi cotización">
+    <div class="drawer__head">
+      <h3>Mi cotización</h3>
+      <button class="icon-btn" id="drawerClose" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="drawer__body" id="drawerBody"></div>
+    <div class="drawer__foot">
+      <a href="#cotizar" class="btn btn--navy btn--full" id="drawerGo">Continuar a cotizar</a>
+    </div>
+  </aside>
+
+  <!-- Botón flotante WhatsApp -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.38 4 15c0 2.35.69 4.55 1.87 6.4L4 29l7.82-1.83A12.03 12.03 0 0 0 16.04 27C22.68 27 28 21.62 28 15S22.68 3 16.04 3Zm0 21.8c-1.8 0-3.5-.5-4.95-1.36l-.35-.21-4.64 1.08 1.1-4.52-.23-.37A9.74 9.74 0 0 1 6.2 15c0-5.42 4.4-9.8 9.84-9.8S25.8 9.58 25.8 15s-4.4 9.8-9.76 9.8Zm5.4-7.34c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.48.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.08 1.75-.72 2-1.4.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
